@@ -1,2 +1,7 @@
 # vibecast-weather-app
-Weather app using the visual crossing API, displays a theme dependant on the weather at X location.
+A weather app using the Visual Crossing API that displays a theme dependent on the weather at X location.
+
+# links
+
+# screenshots
+
