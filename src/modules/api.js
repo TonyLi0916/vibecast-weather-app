@@ -5,7 +5,9 @@ const BASE_URL =
 // asynchronous function that hits the API
 export async function getWeather(city) {
   try {
-    const response = await fetch(`${BASE_URL}${city}/?key=${API_KEY}`); // wait for response
+    const response = await fetch(
+      `${BASE_URL}${city}/next4days?unitGroup=us&key=${API_KEY}`
+    ); // wait for response
     // if status error we throw an error
     if (!response.ok) throw new Error("Failed to fetch weather data");
     const data = await response.json();

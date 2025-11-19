@@ -6,7 +6,31 @@
     <title>Document</title>
     <link href="output.css" rel="stylesheet" />
   </head>
-  <body class="bg-blue-300">
-    <h1 class="text-2xl font-mono font-bold underline">VibeCast</h1>
+  <body class="bg-slate-800">
+    <p
+      class="text-slate-300 text-3xl font-elms-sans font-bold flex justify-center"
+    >
+      VibeCast
+    </h1>
+    <form id="search-form" class="flex justify-center mt-3">
+      <input
+        id="search-bar"
+        type="text"
+        placeholder="Enter a City!"
+        class="text-slate-300 bg-slate-800 px-3 py-1 rounded-md mr-2"
+      />
+      <button
+        type="submit"
+        id="submit-btn"
+        class="text-white hover:bg-slate-700 bg-slate-300 box-border border font-medium leading-5 rounded-base text-sm px-4 py-1.5"
+      >
+        Submit
+      </button>
+    </form>
+      
+      <div id="results-container" class="flex justify-center mt-3">
+        <p class="text-emerald-300 text-lg font-semibold">Results</p>
+      </div>
+    </div>
   </body>
 </html>
