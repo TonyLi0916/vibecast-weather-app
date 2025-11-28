@@ -1,7 +1,5 @@
 import { getWeather } from "./api";
-import { renderWeather } from "./dom";
-
-const city = "Markham";
+import { renderWeather } from "./dom.js";
 
 export function showError(msg) {
   document.getElementById(
@@ -15,11 +13,10 @@ export async function showWeather(data) {
   const formattedData = {
     city: data.address,
     timeZone: data.timezone,
-    temp: today.temp,
+    temp: Number((today.temp - 32) / 1.8).toFixed(1),
     feelsLike: today.feelslike,
-    minTemp: today.tempmin,
-    maxTemp: today.tempmax,
-    conditions: today.conditions,
+    minTemp: Number((today.tempmin - 32) / 1.8).toFixed(1),
+    maxTemp: Number((today.tempmax - 32) / 1.8).toFixed(1),
     desc: today.description,
   };
 

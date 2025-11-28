@@ -9,17 +9,20 @@
       "Courier New", monospace;
     --color-red-500: oklch(63.7% 0.237 25.331);
     --color-emerald-300: oklch(84.5% 0.143 164.978);
+    --color-indigo-300: oklch(78.5% 0.115 274.713);
     --color-slate-300: oklch(86.9% 0.022 252.894);
     --color-slate-700: oklch(37.2% 0.044 257.287);
     --color-slate-800: oklch(27.9% 0.041 260.031);
     --color-white: #fff;
     --spacing: 0.25rem;
+    --container-3xs: 16rem;
+    --container-xs: 20rem;
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
-    --text-base: 1rem;
-    --text-base--line-height: calc(1.5 / 1);
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
     --font-weight-medium: 500;
@@ -192,11 +195,48 @@
   .flex {
     display: flex;
   }
+  .size-px {
+    width: 1px;
+    height: 1px;
+  }
+  .h-auto {
+    height: auto;
+  }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
+  }
+  .w-3xs {
+    width: var(--container-3xs);
+  }
+  .w-16 {
+    width: calc(var(--spacing) * 16);
+  }
+  .w-20 {
+    width: calc(var(--spacing) * 20);
+  }
+  .w-24 {
+    width: calc(var(--spacing) * 24);
+  }
+  .w-30 {
+    width: calc(var(--spacing) * 30);
+  }
+  .w-34 {
+    width: calc(var(--spacing) * 34);
+  }
+  .w-xs {
+    width: var(--container-xs);
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .items-center {
+    align-items: center;
+  }
   .justify-center {
     justify-content: center;
   }
-  .justify-center-safe {
-    justify-content: safe center;
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
   }
   .rounded-md {
     border-radius: var(--radius-md);
@@ -226,16 +266,9 @@
   .font-elms-sans {
     font-family: var(--font-elms-sans);
   }
-  .font-mono {
-    font-family: var(--font-mono);
-  }
   .text-3xl {
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
-  }
-  .text-base {
-    font-size: var(--text-base);
-    line-height: var(--tw-leading, var(--text-base--line-height));
   }
   .text-lg {
     font-size: var(--text-lg);
@@ -244,6 +277,10 @@
   .text-sm {
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
   }
   .leading-5 {
     --tw-leading: calc(var(--spacing) * 5);
@@ -263,6 +300,9 @@
   }
   .text-emerald-300 {
     color: var(--color-emerald-300);
+  }
+  .text-indigo-300 {
+    color: var(--color-indigo-300);
   }
   .text-red-500 {
     color: var(--color-red-500);
