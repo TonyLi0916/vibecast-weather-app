@@ -6,12 +6,13 @@
     <title>Document</title>
     <link href="output.css" rel="stylesheet" />
   </head>
-  <body class="bg-slate-800">
+  <body class="min-h-screen pb-20 bg-slate-800">
     <p
       class="text-slate-300 text-3xl font-elms-sans font-bold flex justify-center"
     >
       VibeCast
-    </h1>
+    </p>
+
     <form id="search-form" class="flex justify-center mt-3">
       <input
         id="search-bar"
@@ -27,17 +28,35 @@
         Submit
       </button>
     </form>
-      
-      <div id="results-container" class="flex justify-center mt-3">
-        <p class="text-emerald-300 text-lg font-semibold">Results</p>
-      </div>
 
-      <div id="symbol-img" class="flex justify-center mt-3">
-        <img id="symbol" src="/src/imgs/symbol.jpg" class="w-34 h-auto">
-      </div>
-
-      <div id="future-dates"></div>
-
+    <div id="results-container" class="flex justify-center mt-3">
+      <p class="text-emerald-300 text-lg font-semibold">
+        Search a city to see Results!
+      </p>
     </div>
+
+    <div id="symbol-img" class="flex justify-center mt-3">
+      <img src="/src/imgs/symbol-modified.png" class="w-34 h-auto" />
+    </div>
+
+    <div id="future-dates"></div>
+
+    <footer
+      class="absolute bottom-0 left-0 w-full flex justify-center items-center gap-4 text-slate-400 p-4"
+    >
+      <p>
+        Copyright &copy;
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Tony Li
+      </p>
+      <a href="https://github.com/TonyLi0916" target="_blank">
+        <img
+          class="w-10 transition-transform duration-300 ease-in-out hover:rotate-360 invert"
+          src="/src/imgs/github-mark-copy.svg"
+        />
+      </a>
+    </footer>
   </body>
 </html>

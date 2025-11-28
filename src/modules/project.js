@@ -11,7 +11,9 @@ export async function showWeather(data) {
   const today = data.days[0];
 
   const formattedData = {
-    city: data.address,
+    city:
+      data.address.charAt(0).toUpperCase() +
+      data.address.slice(1).toLowerCase(),
     timeZone: data.timezone,
     temp: Number((today.temp - 32) / 1.8).toFixed(1),
     feelsLike: today.feelslike,
