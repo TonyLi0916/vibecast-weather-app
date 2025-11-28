@@ -1,5 +1,2 @@
 output.css linguist-generated=true
 **/output.css linguist-generated=true
-dist/** linguist-generated=true
-build/** linguist-generated=true
-public/*.css linguist-generated=true
