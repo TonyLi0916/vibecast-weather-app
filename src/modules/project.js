@@ -1,4 +1,3 @@
-import { getWeather } from "./api";
 import { renderWeather } from "./dom.js";
 
 export function showError(msg) {
@@ -32,4 +31,20 @@ export function getNextFiveHours(data) {
   const nextHours = hours.slice(currentHour + 1, currentHour + 5);
 
   return nextHours;
+}
+
+export function temperatureCheck(data) {
+  const temp = Number((data.days[0].temp - 32) / 1.8).toFixed(1);
+
+  if (temp < -15) {
+    return 1;
+  } else if (temp >= -15 && temp < 0) {
+    return 2;
+  } else if (temp >= 0 && temp < 10) {
+    return 3;
+  } else if (temp >= 10 && temp < 20) {
+    return 4;
+  } else {
+    return 5;
+  }
 }

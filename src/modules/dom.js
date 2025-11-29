@@ -1,5 +1,8 @@
+import { data } from "autoprefixer";
+
 const results = document.querySelector("#results-container");
 const nextHours = document.querySelector("#future-hours");
+const vibe = document.querySelector("#outfit-suggestion");
 
 export const renderWeather = (data) => {
   results.innerHTML = `
@@ -36,4 +39,33 @@ export const renderNextHours = (hourData) => {
         .join("")}
     </div>
       `;
+};
+
+export const renderVibe = (num) => {
+  switch (num) {
+    case 1:
+      vibe.innerHTML = `
+      <p> ☃️ Wear a thick jacket, gloves, scarf, and consider layering up. YOU ARE AT THE NORTH POLE! 🤧 </p>
+      `;
+      break;
+    case 2:
+      vibe.innerHTML = `
+      <p> ❄️ Wear a warm jacket, and thick pants. Go get a hot chocolate. IT IS REALLY COLD! ☕️ </p>
+      `;
+      break;
+    case 3:
+      vibe.innerHTML = `
+      <p> 💨 Wear a windbreaker, or a sweater (if you're brave). Go out for a run. IT IS MODERATELY COLD! ☁️ </p>
+      `;
+      break;
+    case 4:
+      vibe.innerHTML = `
+        <p> 🍁 Wear a sweater, flannel, or even a shirt. Go enjoy the perfect temperature. IT IS WARM!  </p>
+        `;
+    case 5:
+      vibe.innerHTML = `
+        <p> 🥵 Wear a t-shirt, shorts, and make sure to wear sunscreen. YOU ARE IN THE DESERT! 🌵 </p>
+        `;
+      break;
+  }
 };
