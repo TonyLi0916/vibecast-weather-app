@@ -13,7 +13,7 @@ export async function getWeather(city) {
     const data = await response.json();
     return data; // return json data
   } catch (e) {
-    console.log(e);
+    alert(e);
     return null;
   }
 }

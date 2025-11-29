@@ -16,11 +16,20 @@ export async function showWeather(data) {
       data.address.slice(1).toLowerCase(),
     timeZone: data.timezone,
     temp: Number((today.temp - 32) / 1.8).toFixed(1),
+    condition: today.conditions,
     feelsLike: today.feelslike,
     minTemp: Number((today.tempmin - 32) / 1.8).toFixed(1),
     maxTemp: Number((today.tempmax - 32) / 1.8).toFixed(1),
-    desc: today.description,
   };
 
   renderWeather(formattedData);
+}
+
+export function getNextFiveHours(data) {
+  const hours = data.days[0].hours;
+  const now = new Date();
+  const currentHour = now.getHours();
+  const nextHours = hours.slice(currentHour + 1, currentHour + 5);
+
+  return nextHours;
 }
