@@ -13,7 +13,6 @@ export async function getWeather(city) {
     const data = await response.json();
     return data; // return json data
   } catch (e) {
-    alert(e);
-    return null;
+    throw new Error("City not found or network error");
   }
 }

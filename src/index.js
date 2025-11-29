@@ -14,10 +14,8 @@ const searchBar = document.querySelector("#search-bar");
 const form = document.querySelector("#search-form");
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-});
-
-submitBtn.addEventListener("click", async () => {
   const city = searchBar.value.trim();
+  if (!city) return;
 
   try {
     const data = await getWeather(city);
