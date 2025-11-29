@@ -25,10 +25,15 @@ export async function showWeather(data) {
 }
 
 export function getNextFiveHours(data) {
-  const hours = data.days[0].hours;
+  const todayHours = data.days[0].hours;
+  const tomorrowHours = data.days[1].hours;
+
+  const allHours = [...todayHours, ...tomorrowHours];
+
   const now = new Date();
   const currentHour = now.getHours();
-  const nextHours = hours.slice(currentHour + 1, currentHour + 5);
+
+  const nextHours = allHours.slice(currentHour, currentHour + 4);
 
   return nextHours;
 }
