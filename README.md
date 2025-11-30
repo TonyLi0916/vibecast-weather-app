@@ -37,6 +37,35 @@ VibeCast is a simple and elegant weather application that lets users search for 
 
 # 🔧 Installation
 Clone the repo:
+```
+git clone https://github.com/TonyLi0916/vibecast-weather-app.git
+cd vibecast-weather-app
+```
+Install dependencies:
+```
+npm install
+```
+Start Tailwind and Webpack dev servers:
+```
+npm run dev
+```
+Build for production
+```
+npm run build
+```
+
+# 🌐 API Setup
+Go to Visual Crossing Weather API
+
+Generate a free API key
+
+Open src/modules/api.js
+
+Insert your key:
+```
+const API_KEY = "YOUR_KEY_HERE";
+```
+
 
 
 
