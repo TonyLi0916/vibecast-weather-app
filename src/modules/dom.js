@@ -22,11 +22,11 @@ export const renderWeather = (data) => {
 
 export const renderNextHours = (hourData) => {
   nextHours.innerHTML = `
-    <div class="flex justify-start sm:justify-center items-center gap-2 sm:gap-4 mt-6 overflow-x-auto pb-4 scrollbar-hide">
+    <div class="flex justify-start sm:justify-center items-stretch gap-2 sm:gap-4 mt-6 overflow-x-auto pb-4 scrollbar-hide">
       ${hourData
         .map(
           (h) => `
-            <div class="flex-shrink-0 p-3 sm:p-4 bg-sky-500 rounded-md w-28 sm:w-32 md:w-36 text-center shadow-lg">
+            <div class="flex-shrink-0 flex flex-col p-3 sm:p-4 bg-sky-500 rounded-md w-28 sm:w-32 md:w-36 min-h-32 sm:min-h-36 text-center shadow-lg">
               <p class="font-science-gothic font-bold text-sm sm:text-base mb-2">${h.datetime.slice(
                 0,
                 5
@@ -35,7 +35,7 @@ export const renderNextHours = (hourData) => {
                 (h.temp - 32) / 1.8
               ).toFixed(1)} °C
               </p>
-              <p class="text-xs sm:text-sm text-slate-800 font-medium">
+              <p class="text-xs sm:text-sm text-slate-800 font-medium mt-auto line-clamp-2">
                 ${h.conditions}
               </p>
             </div>

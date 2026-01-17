@@ -1,9 +1,8 @@
 import { renderWeather } from "./dom.js";
 
 export function showError(msg) {
-  document.getElementById(
-    "results-container"
-  ).innerHTML = `<p class="text-red-500">${msg}</p>`;
+  document.getElementById("results-container").innerHTML =
+    `<p class="text-red-500">${msg}</p>`;
 }
 
 export async function showWeather(data) {
@@ -33,7 +32,7 @@ export function getNextFiveHours(data) {
   const now = new Date();
   const currentHour = now.getHours();
 
-  const nextHours = allHours.slice(currentHour, currentHour + 4);
+  const nextHours = allHours.slice(currentHour, currentHour + 8);
 
   return nextHours;
 }
