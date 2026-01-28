@@ -1,6 +1,7 @@
-# 🌦️ VibeCast — Weather & Outfit Suggestion App
+# 🌦️ VibeCast — Weather Insights & Prediction App
 
-VibeCast is a simple and elegant weather application that lets users search for any city and instantly view its current conditions, temperature, and a vibe-based outfit suggestion. The app also displays the next 4 hours of weather to help users plan.
+VibeCast is a clean, data-driven weather application that allows users to search any city and instantly view current conditions, short-term forecasts, and simple temperature trend predictions.
+In addition to displaying live API data, VibeCast performs lightweight analysis on recent temperatures to predict upcoming trends and compare them against actual forecasts.
 
 # 💻 Live Website
 
@@ -17,6 +18,12 @@ https://tonyli0916.github.io/vibecast-weather-app/
 - 👕 Outfit suggestions based on temperature
 
 - 🎨 Fully responsive UI built with Tailwind CSS
+
+- 📈 Temperature trend prediction for upcoming days using simple linear regression
+
+- 📊 Comparison between predicted temperatures and actual API forecasts
+
+- 🧠 Basic accuracy classification (excellent / good / fair) based on prediction error
 
 - 📱 Mobile-friendly design
 

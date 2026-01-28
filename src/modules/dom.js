@@ -29,17 +29,17 @@ export const renderNextHours = (hourData) => {
             <div class="flex-shrink-0 flex flex-col p-3 sm:p-4 bg-sky-500 rounded-md w-28 sm:w-32 md:w-36 min-h-32 sm:min-h-36 text-center shadow-lg">
               <p class="font-science-gothic font-bold text-sm sm:text-base mb-2">${h.datetime.slice(
                 0,
-                5
+                5,
               )}</p>
-              <p class="text-2xl sm:text-3xl font-bold text-indigo-700 mb-1">${Number(
-                (h.temp - 32) / 1.8
+              <p class="text-2xl sm:text-3xl font-bold text-indigo-700 mb-1 whitespace-nowrap">${Number(
+                (h.temp - 32) / 1.8,
               ).toFixed(1)} °C
               </p>
               <p class="text-xs sm:text-sm text-slate-800 font-medium mt-auto line-clamp-2">
                 ${h.conditions}
               </p>
             </div>
-          `
+          `,
         )
         .join("")}
     </div>
@@ -77,4 +77,98 @@ export const renderVibe = (num) => {
       <img src="${content.gif}" class="w-48 sm:w-56 md:w-64 h-auto mt-3 rounded-lg shadow-lg" alt="Weather vibe illustration" />
     `;
   }
+};
+
+export const renderPredictionComparison = (comparisons) => {
+  const analysisContainer = document.querySelector("#analysis-container");
+
+  if (!analysisContainer) return;
+
+  const getTrendIcon = (trend) => {
+    switch (trend) {
+      case "warming":
+        return "📈";
+      case "cooling":
+        return "📉";
+      default:
+        return "➡️";
+    }
+  };
+
+  analysisContainer.innerHTML = `
+    <div class="max-w-4xl mx-auto mt-8 px-4">
+      <h3 class="text-2xl sm:text-3xl font-bold text-cyan-300 text-center mb-6">
+        🔮 Prediction Analysis (Linear Regression)
+      </h3>
+      
+      <div class="bg-slate-700 rounded-lg p-4 sm:p-6 shadow-xl">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm sm:text-base">
+            <thead>
+              <tr class="border-b border-slate-600">
+                <th class="text-left py-3 px-2 text-slate-300 font-semibold">Day</th>
+                <th class="text-center py-3 px-2 text-slate-300 font-semibold">Prediction</th>
+                <th class="text-center py-3 px-2 text-slate-300 font-semibold">Actual</th>
+                <th class="text-center py-3 px-2 text-slate-300 font-semibold">Difference</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${comparisons
+                .map(
+                  (comp) => `
+                <tr class="border-b border-slate-600 hover:bg-slate-600 transition-colors">
+                  <td class="py-3 px-2 text-slate-200">
+                    ${getTrendIcon(comp.trend)} Day +${comp.dayOffset}
+                  </td>
+                  <td class="text-center py-3 px-2 text-blue-300 font-semibold">
+                    ${comp.prediction}°C
+                  </td>
+                  <td class="text-center py-3 px-2 text-purple-300 font-semibold">
+                    ${comp.actual ? comp.actual + "°C" : "N/A"}
+                    ${comp.actualConditions ? `<div class="text-xs text-slate-400">${comp.actualConditions}</div>` : ""}
+                  </td>
+                  <td class="text-center py-3 px-2 text-slate-300">
+                    ${comp.difference ? comp.difference + "°C" : "-"}
+                  </td>
+                </tr>
+              `,
+                )
+                .join("")}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  `;
+};
+
+export const renderAnalysisSummary = (summary) => {
+  const summaryContainer = document.querySelector("#summary-container");
+
+  if (!summaryContainer) return;
+
+  summaryContainer.innerHTML = `
+    <div class="max-w-4xl mx-auto mt-6 px-4">
+      <div class="bg-gradient-to-r from-slate-700 to-slate-600 rounded-lg p-4 sm:p-6 shadow-xl">
+        <h4 class="text-xl sm:text-2xl font-bold text-emerald-300 mb-4 text-center">
+          📊 Analysis Summary
+        </h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="text-center">
+            <p class="text-slate-400 text-sm mb-1">Overall Accuracy</p>
+            <p class="text-2xl font-bold text-cyan-300">${summary.overallAccuracy}</p>
+          </div>
+          <div class="text-center">
+            <p class="text-slate-400 text-sm mb-1">Avg Difference</p>
+            <p class="text-2xl font-bold text-yellow-300">${summary.averageDifference}</p>
+          </div>
+        </div>
+        <div class="mt-4 pt-4 border-t border-slate-500">
+          <p class="text-slate-300 text-sm sm:text-base text-center leading-relaxed">
+            💡 ${summary.recommendation}
+          </p>
+        </div>
+      </div>
+    </div>
+  `;
 };

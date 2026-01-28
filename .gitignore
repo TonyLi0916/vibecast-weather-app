@@ -140,3 +140,4 @@ vite.config.ts.timestamp-*
 
 # Ignore History
 .history/
+dist/

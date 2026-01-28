@@ -1,14 +1,9 @@
 import { renderWeather } from "./dom.js";
 
-export function showError(msg) {
-  document.getElementById("results-container").innerHTML =
-    `<p class="text-red-500">${msg}</p>`;
-}
-
-export async function showWeather(data) {
+export function processWeatherData(data) {
   const today = data.days[0];
 
-  const formattedData = {
+  return {
     city:
       data.address.charAt(0).toUpperCase() +
       data.address.slice(1).toLowerCase(),
@@ -19,11 +14,9 @@ export async function showWeather(data) {
     minTemp: Number((today.tempmin - 32) / 1.8).toFixed(1),
     maxTemp: Number((today.tempmax - 32) / 1.8).toFixed(1),
   };
-
-  renderWeather(formattedData);
 }
 
-export function getNextFiveHours(data) {
+export function processNextHoursData(data) {
   const todayHours = data.days[0].hours;
   const tomorrowHours = data.days[1].hours;
 
@@ -37,8 +30,8 @@ export function getNextFiveHours(data) {
   return nextHours;
 }
 
-export function temperatureCheck(data) {
-  const temp = Number((data.days[0].temp - 32) / 1.8).toFixed(1);
+export function analyzeTemperature(tempCelsius) {
+  const temp = Number(tempCelsius);
 
   if (temp < -15) {
     return 1;
@@ -51,4 +44,23 @@ export function temperatureCheck(data) {
   } else {
     return 5;
   }
+}
+
+export function showError(msg) {
+  document.getElementById("results-container").innerHTML =
+    `<p class="text-red-500">${msg}</p>`;
+}
+
+export async function showWeather(data) {
+  const formattedData = processWeatherData(data);
+  renderWeather(formattedData);
+}
+
+export function getNextFiveHours(data) {
+  return processNextHoursData(data);
+}
+
+export function temperatureCheck(data) {
+  const processedData = processWeatherData(data);
+  return analyzeTemperature(processedData.temp);
 }
