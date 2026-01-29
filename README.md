@@ -40,7 +40,7 @@ https://tonyli0916.github.io/vibecast-weather-app/
 - Visual Crossing Weather API
 
 # 📸 Screenshots
-
+<img width="314" height="679" alt="Screenshot 2026-01-28 at 7 30 22 PM" src="https://github.com/user-attachments/assets/2d019090-5b24-4055-bdbc-a0362528b4a4" />
 <img width="309" height="674" alt="Screenshot 2025-11-29 at 7 17 46 PM" src="https://github.com/user-attachments/assets/9ac30644-c671-4c64-8255-c1804166c8a6" />
 <img width="310" height="671" alt="Screenshot 2025-11-29 at 7 18 28 PM" src="https://github.com/user-attachments/assets/1f9b5a66-1bc6-4fad-8ef0-f9a3516001cf" />
 
