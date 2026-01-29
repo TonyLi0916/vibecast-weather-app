@@ -54,3 +54,5 @@ form.addEventListener("submit", async (e) => {
     showError(e.message);
   }
 });
+// Set copyright year
+document.getElementById("year").textContent = new Date().getFullYear();
