@@ -1,7 +1,7 @@
 # 🌦️ VibeCast — Weather Insights & Prediction App
 
-VibeCast is a clean, data-driven weather application that allows users to search any city and instantly view current conditions, short-term forecasts, and simple temperature trend predictions.
-In addition to displaying live API data, VibeCast performs lightweight analysis on recent temperatures to predict upcoming trends and compare them against actual forecasts.
+VibeCast is a responsive, theme-adaptive weather application that allows users to search any city and instantly view current conditions, short-term forecasts, and lightweight temperature trend predictions.
+The interface dynamically adjusts visuals based on weather conditions and time of day, providing a clean, modern UI while presenting live API data alongside simple predictive analysis of recent temperature patterns.
 
 # 💻 Live Website
 
